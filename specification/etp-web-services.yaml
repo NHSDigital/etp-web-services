@@ -22,7 +22,6 @@ servers:
     Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
 
     You can search for dispenser information using:
-
     * a valid ODS code (previously known as NACS code)
     * their name and service type (community pharmacy or appliance contractor), and whether they are EPS-enabled or not
     * their name and location and the service type, and whether they are EPS-enabled or not
@@ -37,7 +36,6 @@ servers:
     
     ## Related APIs
     The following APIs are related to this one:
-
     * [Electronic Prescription Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir)  - access the Electronic Prescription Service (EPS) - currently you can only use this new API to prescribe, not dispense
     * [Electronic Prescription Service - HL7 V3 API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-hl7-v3) - access the Electronic Prescription Service (EPS) to send prescriptions from prescribers such as GPs to dispensers such as pharmacies using our HL7 V3 API
     * [Electronic Prescription Tracker - REST API](https://digital.nhs.uk/developer/api-catalogue/spine-electronic-prescription-service-tracker-rest) - use this if you want a read-only interface to obtain information about a patient’s prescriptions
@@ -63,20 +61,17 @@ servers:
 
     For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
     
-    ## Network access
-    
+    ## Network access    
     This API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network). 
 
     For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).
 
-    ## Security and authorisation
-    
+    ## Security and authorisation    
     Your API call must include a subscription-key header with a valid subscription key.
     
     [Login](https://developer.api.nhs.uk/login) or [register](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
-    ## Environments and testing
-    
+    ## Environments and testing    
     There are no testing environments. 
     
     The base URL for all production API calls is `https://api.nhs.uk/etp`.

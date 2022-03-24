@@ -17,7 +17,7 @@ servers:
 #  - name: Fish
 #  - name: Guinia Pigs
 
-  description: |
+    description: |
     ## Overview    
     Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
 

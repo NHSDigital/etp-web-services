@@ -9,37 +9,111 @@ info:
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
 servers:
-  - url: http://etpwebservice.swagger.io
+    url: http://etpwebservice.swagger.io
+    
 #tags: # must be in alphabetical order
 #  - name: Cats
 #  - name: Dogs
 #  - name: Fish
 #  - name: Guinia Pigs
-  
+
+    description: |
+    ## Overview    
+    Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
+
+    You can search for dispenser information using:
+    * a valid ODS code (previously known as NACS code)
+    * their name and service type (community pharmacy or appliance contractor), and whether they are EPS-enabled or not
+    * their name and location and the service type, and whether they are EPS-enabled or not
+    * their postcode and service type, and whether they are EPS-enabled or not
+    
+    Use this API if you are building GP software - it provides additional information about dispensing appliance contractors that is not available through [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
+
+    As one of the Directory of Services APIs, this also provides data to the [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
+    
+    ## Who can use this API
+    This API can only be used to support the delivery of health and social care.
+    
+    ## Related APIs
+    The following APIs are related to this one:
+    * [Electronic Prescription Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir)  - access the Electronic Prescription Service (EPS) - currently you can only use this new API to prescribe, not dispense
+    * [Electronic Prescription Service - HL7 V3 API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-hl7-v3) - access the Electronic Prescription Service (EPS) to send prescriptions from prescribers such as GPs to dispensers such as pharmacies using our HL7 V3 API
+    * [Electronic Prescription Tracker - REST API](https://digital.nhs.uk/developer/api-catalogue/spine-electronic-prescription-service-tracker-rest) - use this if you want a read-only interface to obtain information about a patient’s prescriptions
+    * NHS BSA Prescription Services [Open Data Portal](https://opendata.nhsbsa.net/) - download public datasets including Secondary care medicines data (SCMD),  prescriptions issued in England, and Prescription Cost Analysis (PCA) in England
+    * [Directory of Services - REST API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-urgent-and-emergency-care-rest) - retrieve information about a wide range of health and care services in England with our Directory of Services - REST API
+    * [Directory of Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-soap) - retrieve information about a wide range of health and care services in England with our Directory of Services - SOAP API
+    * [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services) - use this API to access limited information about dispensing services
+
+    ## API status and roadmap
+    This API standard is in [beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status), meaning:
+    * it is available for production use
+    * we might make breaking changes, but only if we cannot avoid it, and we will give an advance notice
+    
+    To suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/?order=popular&filter=all&tag=etp-api#controls).
+    
+    ## Service level
+    This API is a bronze service, meaning it is operational and supported only during business hours (8am to 6pm), Monday to Friday excluding bank holidays.
+
+    For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).
+    
+    ## Technology
+    This API is a REST API. It is accessed through HTTP and returns data in a JSON format.
+
+    For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
+    
+    ## Network access    
+    This API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network). 
+
+    For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).
+
+    ## Security and authorisation    
+    Your API call must include a subscription-key header with a valid subscription key.
+    
+    [Login](https://developer.api.nhs.uk/login) or [register](https://developer.api.nhs.uk/register) to get an API key to use this API.
+
+    ## Environments and testing    
+    There are no testing environments. 
+    
+    The base URL for all production API calls is `https://api.nhs.uk/etp`.
+    
+    ## Onboarding
+    There is no onboarding process or assurance required, other than [registering](https://developer.api.nhs.uk/register) to get an API key to use this API.
+
 paths:
   /SearchByName:
     get:
       summary: Search dispensers by name
-      description: This method retrieves the first 25 pharmacies / Appliance contractors (in alphabetical order) with a name LIKE the one entered and the service type / EPS status chosen. It is a non-geographical search i.e name only for virtual pharmacies or appliance contractors. The match is based on the first part of the stored name. An example would be a search for 'Coens' will return 'Coens Plc' but not 'The Coens Chemist'. This is not a geographical search and will return any dispensaries within England that meet the name criteria.
+      description: 
+        ## Overview
+        This method retrieves the first 25 pharmacies or appliance contractors (in alphabetical order) with a name LIKE the one entered and the service type or EPS status chosen. 
+        
+        It is a non-geographical search, that is, for name only for virtual pharmacies or appliance contractors. 
+        
+        The match is based on the first part of the stored name. For example, a search for 'Coens' returns 'Coens Plc' but not 'The Coens Chemist'. 
+        
+        This is not a geographical search and returns any dispensaries within England that meet the name criteria.
+        
       operationId: SearchByName
       tags:
         - SearchByName
       parameters:
         - name: organisationName
           in: query
-          description: The name of the pharmacy to search on (e.g. Boots)
+          description: The name of the pharmacy to search on
           required: true
+          example: Boots
           schema:
             type: string
         - name: serviceType
           in: query
-          description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for - Community Pharmacy (inc. Internet) (1) or Appliance (2)
           required: true
+          example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
           in: query
-          description: Eps - Retrieve EPS enabled/ disabled. dispensers (YES/ NO) – The default value will be YES.
+          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -57,37 +131,52 @@ paths:
   /SearchByNameAndLocation:
     get:
       summary: Search dispenser by Name and Location
-      description: This method retrieves pharmacies / Appliance contractors with the address /post code specified that have a name LIKE the one entered, and the service type / EPS status chosen. This search will match on either part postcode or town (if both are supplied the postcode will be used). Please note that this search will match against the town name or part postcode. For example, if a part postcode of LS1 is entered, the search will only return dispensaries within LS1, no dispensaries in surrounding postcodes will be returned even if there are less than 25 in the supplied part postcode results. For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
+      description: 
+        ## Overview
+        This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name LIKE the one entered, and the service type or EPS status chosen. 
+         
+        This search matches on either part postcode or town (if you supply both, the postcode is used). 
+         
+        Note that this search matches against the town name or part postcode. 
+         
+        For example, if you supply a part postcode of LS1, the search only returns dispensaries within LS1. No dispensaries in surrounding postcodes are returned even if there are less than 25 in the supplied part postcode results. 
+         
+        For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
+
       operationId: /SearchByNameAndLocation
       tags:
         - SearchByNameAndLocation
       parameters:
         - name: organisationName
           in: query
-          description: The name of the pharmacy to search on (e.g. Boots)
+          description: The name of the pharmacy to search on
           required: true
+          example: Boots
           schema:
             type: string
         - name: partPostcode
           in: query
           description: First Part of a valid postcode to search on
           required: false
+          example: LS2
           schema:
             type: string
         - name: location
           in: query
           description: Street name or Town name to search
+          example: Leeds
           schema:
             type: string    
         - name: serviceType
           in: query
-          description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for - Community Pharmacy (inc. Internet) (1) or Appliance (2)
           required: true
+          example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
           in: query
-          description: Eps - Retrieve EPS enabled/ disabled. dispensers (YES/ NO) – The default value will be YES.
+          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -104,15 +193,25 @@ paths:
   /SearchByODSCode:
     get:
       summary: /SearchByOdsCode
-      description: Occasionally you may not wish to search for a dispenser by name or location as the ODS code of a local pharmacy may already be known. This procedure is used to validate that the ODS code entered is a valid dispenser. It returns pertinent information about the dispenser to allow the end user to validate that the ODS code relates to the dispenser they intended. The information returned will include whether the dispenser is EPS enabled. This procedure will only return organisations registered as dispensers (i.e. if a valid ODS code is supplied but it is not registered as a dispenser, then no data will be returned).
+      description: 
+        ## Overview
+        Occasionally you might know the ODS code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
+         
+        It returns pertinent information about the dispenser to allow the end user to validate that the ODS code is the dispenser they intended. 
+         
+        The information returned includes whether the dispenser is EPS enabled. 
+         
+        This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
+      
       operationId: SearchByODSCode
       tags:
         - SearchByODSCode
       parameters:
         - name: odscode
           in: query
-          description: Valid ODS Code (e.g. FLH84,FHH81,FW866)
+          description: Valid ODS Code such as FLH84,FHH81 or FW866
           required: true
+          example: FLH84
           schema:
             type: string     
       responses:
@@ -130,7 +229,10 @@ paths:
   /SearchByPostcode:
     get:
       summary: Search dispensers by postcode
-      description: This method retrieves the 25 nearest pharmacies/appliance contractors to the supplied postcode and the service type/EPS status chosen.
+      description: 
+        ## Overview
+        This endpoint retrieves the 25 nearest pharmacies or appliance contractors to the supplied postcode and the service type or EPS status chosen.
+        
       operationId: SearchByPostcode
       tags:
         - SearchByPostcode
@@ -139,17 +241,19 @@ paths:
           in: query
           description: Full postcode to search on
           required: true
+          example: LS2 8PJ
           schema:
             type: string
         - name: serviceType
           in: query
-          description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for - Community Pharmacy (inc. Internet) (1) or Appliance (2)
           required: true
+          example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
           in: query
-          description: Eps - Retrieve EPS enabled/ disabled. dispensers (YES/ NO) – The default value will be YES.
+          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -167,7 +271,10 @@ paths:
   /SearchInternetPharmacy:
     get:
       summary: Search all internet pharmacies
-      description: Get all internet pharmacies
+      description: 
+        ## Overview
+        Get all internet pharmacies
+        
       operationId: SearchInternetPharmacy
       tags:
         - SearchInternetPharmacy     

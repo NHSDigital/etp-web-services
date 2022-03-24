@@ -87,7 +87,16 @@ paths:
   /SearchByName:
     get:
       summary: Search dispensers by name
-      description: This method retrieves the first 25 pharmacies / Appliance contractors (in alphabetical order) with a name LIKE the one entered and the service type / EPS status chosen. It is a non-geographical search i.e name only for virtual pharmacies or appliance contractors. The match is based on the first part of the stored name. An example would be a search for 'Coens' will return 'Coens Plc' but not 'The Coens Chemist'. This is not a geographical search and will return any dispensaries within England that meet the name criteria.
+      description: 
+        ## Overview
+        This method retrieves the first 25 pharmacies or appliance contractors (in alphabetical order) with a name LIKE the one entered and the service type or EPS status chosen. 
+        
+        It is a non-geographical search, that is, for name only for virtual pharmacies or appliance contractors. 
+        
+        The match is based on the first part of the stored name. For example, a search for 'Coens' returns 'Coens Plc' but not 'The Coens Chemist'. 
+        
+        This is not a geographical search and returns any dispensaries within England that meet the name criteria.
+        
       operationId: SearchByName
       tags:
         - SearchByName
@@ -126,7 +135,18 @@ paths:
   /SearchByNameAndLocation:
     get:
       summary: Search dispenser by Name and Location
-      description: This method retrieves pharmacies / Appliance contractors with the address /post code specified that have a name LIKE the one entered, and the service type / EPS status chosen. This search will match on either part postcode or town (if both are supplied the postcode will be used). Please note that this search will match against the town name or part postcode. For example, if a part postcode of LS1 is entered, the search will only return dispensaries within LS1, no dispensaries in surrounding postcodes will be returned even if there are less than 25 in the supplied part postcode results. For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
+      description: 
+         ## Overview
+         This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name LIKE the one entered, and the service type or EPS status chosen. 
+         
+         This search matches on either part postcode or town (if you supply both, the postcode is used). 
+         
+         Note that this search matches against the town name or part postcode. 
+         
+         For example, if you supply a part postcode of LS1, the search only returns dispensaries within LS1. No dispensaries in surrounding postcodes are returned even if there are less than 25 in the supplied part postcode results. 
+         
+         For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
+
       operationId: /SearchByNameAndLocation
       tags:
         - SearchByNameAndLocation
@@ -177,7 +197,16 @@ paths:
   /SearchByODSCode:
     get:
       summary: /SearchByOdsCode
-      description: Occasionally you may not wish to search for a dispenser by name or location as the ODS code of a local pharmacy may already be known. This procedure is used to validate that the ODS code entered is a valid dispenser. It returns pertinent information about the dispenser to allow the end user to validate that the ODS code relates to the dispenser they intended. The information returned will include whether the dispenser is EPS enabled. This procedure will only return organisations registered as dispensers (i.e. if a valid ODS code is supplied but it is not registered as a dispenser, then no data will be returned).
+      description: 
+         ## Overview
+         Occasionally you might know the ODS code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
+         
+         It returns pertinent information about the dispenser to allow the end user to validate that the ODS code is the dispenser they intended. 
+         
+         The information returned includes whether the dispenser is EPS enabled. 
+         
+         This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
+      
       operationId: SearchByODSCode
       tags:
         - SearchByODSCode

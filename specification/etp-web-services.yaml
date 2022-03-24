@@ -110,14 +110,14 @@ paths:
             type: string
         - name: serviceType
           in: query
-          description: The service type to search for (that is, Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for - Community Pharmacy (inc. Internet) (1) or Appliance (2)
           required: true
           example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
           in: query
-          description: Eps - Retrieve EPS enabled/ disabled. dispensers (YES/ NO) – The default value will be YES.
+          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -136,16 +136,16 @@ paths:
     get:
       summary: Search dispenser by Name and Location
       description: 
-         ## Overview
-         This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name LIKE the one entered, and the service type or EPS status chosen. 
+        ## Overview
+        This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name LIKE the one entered, and the service type or EPS status chosen. 
          
-         This search matches on either part postcode or town (if you supply both, the postcode is used). 
+        This search matches on either part postcode or town (if you supply both, the postcode is used). 
          
-         Note that this search matches against the town name or part postcode. 
+        Note that this search matches against the town name or part postcode. 
          
-         For example, if you supply a part postcode of LS1, the search only returns dispensaries within LS1. No dispensaries in surrounding postcodes are returned even if there are less than 25 in the supplied part postcode results. 
+        For example, if you supply a part postcode of LS1, the search only returns dispensaries within LS1. No dispensaries in surrounding postcodes are returned even if there are less than 25 in the supplied part postcode results. 
          
-         For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
+        For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
 
       operationId: /SearchByNameAndLocation
       tags:
@@ -173,14 +173,14 @@ paths:
             type: string    
         - name: serviceType
           in: query
-          description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for - Community Pharmacy (inc. Internet) (1) or Appliance (2)
           required: true
           example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
           in: query
-          description: Eps - Retrieve EPS enabled/ disabled. dispensers (YES/ NO) – The default value will be YES.
+          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -198,14 +198,14 @@ paths:
     get:
       summary: /SearchByOdsCode
       description: 
-         ## Overview
-         Occasionally you might know the ODS code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
+        ## Overview
+        Occasionally you might know the ODS code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
          
-         It returns pertinent information about the dispenser to allow the end user to validate that the ODS code is the dispenser they intended. 
+        It returns pertinent information about the dispenser to allow the end user to validate that the ODS code is the dispenser they intended. 
          
-         The information returned includes whether the dispenser is EPS enabled. 
+        The information returned includes whether the dispenser is EPS enabled. 
          
-         This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
+        This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
       
       operationId: SearchByODSCode
       tags:
@@ -233,7 +233,10 @@ paths:
   /SearchByPostcode:
     get:
       summary: Search dispensers by postcode
-      description: This method retrieves the 25 nearest pharmacies/appliance contractors to the supplied postcode and the service type/EPS status chosen.
+      description: 
+        ## Overview
+        This endpoint retrieves the 25 nearest pharmacies or appliance contractors to the supplied postcode and the service type or EPS status chosen.
+        
       operationId: SearchByPostcode
       tags:
         - SearchByPostcode
@@ -247,14 +250,14 @@ paths:
             type: string
         - name: serviceType
           in: query
-          description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for - Community Pharmacy (inc. Internet) (1) or Appliance (2)
           required: true
           example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
           in: query
-          description: Eps - Retrieve EPS enabled/ disabled. dispensers (YES/ NO) – The default value will be YES.
+          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -272,7 +275,10 @@ paths:
   /SearchInternetPharmacy:
     get:
       summary: Search all internet pharmacies
-      description: Get all internet pharmacies
+      description: 
+        ## Overview
+        Get all internet pharmacies
+        
       operationId: SearchInternetPharmacy
       tags:
         - SearchInternetPharmacy     

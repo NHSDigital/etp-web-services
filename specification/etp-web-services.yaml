@@ -16,12 +16,6 @@ servers:
 #  - name: Fish
 #  - name: Guinia Pigs
 
-info:
-  title: Electronic Transmission of Prescriptions Web Services - SOAP API
-  version: '1.0.0'
-  contact:
-    url: 'https://digital.nhs.uk/developer/help-and-support'
-    email: api.management@nhs.net
   description: |
     ## Overview
     Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
@@ -64,7 +58,7 @@ info:
     For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).
     
     ## Technology
-    This API is a REST API. 
+    This API is a REST API. It is accessed through HTTP and returns data in a JSON format.
 
     For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
     
@@ -76,15 +70,18 @@ info:
 
     ## Security and authorisation
     
-    This API is [open-access](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#open-access-apis), which means:
-
-    * we do not authenticate or authorise the calling application
-    * we do not authenticate or authorise the end user - they might not even be present
+    Your API call must include a subscription-key header with a valid subscription key.
+    
+    [Login](https://developer.api.nhs.uk/login) or [register](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
     ## Environments and testing
     
+    There are no testing environments. 
+    
+    The base URL for all production API calls is `https://api.nhs.uk/etp`.
+    
     ## Onboarding
-    This API is open-access, and there is no onboarding process or assurance required.
+    There is no onboarding process or assurance required, other than [registering](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
 paths:
   /SearchByName:
@@ -97,14 +94,16 @@ paths:
       parameters:
         - name: organisationName
           in: query
-          description: The name of the pharmacy to search on (e.g. Boots)
+          description: The name of the pharmacy to search on
           required: true
+          example: Boots
           schema:
             type: string
         - name: serviceType
           in: query
-          description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
+          description: The service type to search for (that is, Community Pharmacy (inc. Internet) (1) or Appliance (2))
           required: true
+          example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
@@ -134,25 +133,29 @@ paths:
       parameters:
         - name: organisationName
           in: query
-          description: The name of the pharmacy to search on (e.g. Boots)
+          description: The name of the pharmacy to search on
           required: true
+          example: Boots
           schema:
             type: string
         - name: partPostcode
           in: query
           description: First Part of a valid postcode to search on
           required: false
+          example: LS2
           schema:
             type: string
         - name: location
           in: query
           description: Street name or Town name to search
+          example: Leeds
           schema:
             type: string    
         - name: serviceType
           in: query
           description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
           required: true
+          example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps
@@ -181,8 +184,9 @@ paths:
       parameters:
         - name: odscode
           in: query
-          description: Valid ODS Code (e.g. FLH84,FHH81,FW866)
+          description: Valid ODS Code such as FLH84,FHH81 or FW866
           required: true
+          example: FLH84
           schema:
             type: string     
       responses:
@@ -209,12 +213,14 @@ paths:
           in: query
           description: Full postcode to search on
           required: true
+          example: LS2 8PJ
           schema:
             type: string
         - name: serviceType
           in: query
           description: The service type to search for (i.e. Community Pharmacy (inc. Internet) (1) or Appliance (2))
           required: true
+          example: Community Pharmacy (inc. Internet)
           schema:
             type: string
         - name: eps

@@ -8,77 +8,78 @@ info:
   contact:
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
-servers:
-    url: http://etpwebservice.swagger.io
-    
+
 #tags: # must be in alphabetical order
 #  - name: Cats
 #  - name: Dogs
 #  - name: Fish
 #  - name: Guinia Pigs
 
-    description: |
-    ## Overview    
-    Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
+  description: |
+      ## Overview    
+      Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
 
-    You can search for dispenser information using:
-    * a valid ODS code (previously known as NACS code)
-    * their name and service type (community pharmacy or appliance contractor), and whether they are EPS-enabled or not
-    * their name and location and the service type, and whether they are EPS-enabled or not
-    * their postcode and service type, and whether they are EPS-enabled or not
+      You can search for dispenser information using:
+      * a valid ODS code (previously known as NACS code)
+      * their name and service type (community pharmacy or appliance contractor), and whether they are EPS-enabled or not
+      * their name and location and the service type, and whether they are EPS-enabled or not
+      * their postcode and service type, and whether they are EPS-enabled or not
     
-    Use this API if you are building GP software - it provides additional information about dispensing appliance contractors that is not available through [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
+      Use this API if you are building GP software - it provides additional information about dispensing appliance contractors that is not available through [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
 
-    As one of the Directory of Services APIs, this also provides data to the [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
+      As one of the Directory of Services APIs, this also provides data to the [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
     
-    ## Who can use this API
-    This API can only be used to support the delivery of health and social care.
+      ## Who can use this API
+      This API can only be used to support the delivery of health and social care.
     
-    ## Related APIs
-    The following APIs are related to this one:
-    * [Electronic Prescription Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir)  - access the Electronic Prescription Service (EPS) - currently you can only use this new API to prescribe, not dispense
-    * [Electronic Prescription Service - HL7 V3 API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-hl7-v3) - access the Electronic Prescription Service (EPS) to send prescriptions from prescribers such as GPs to dispensers such as pharmacies using our HL7 V3 API
-    * [Electronic Prescription Tracker - REST API](https://digital.nhs.uk/developer/api-catalogue/spine-electronic-prescription-service-tracker-rest) - use this if you want a read-only interface to obtain information about a patient’s prescriptions
-    * NHS BSA Prescription Services [Open Data Portal](https://opendata.nhsbsa.net/) - download public datasets including Secondary care medicines data (SCMD),  prescriptions issued in England, and Prescription Cost Analysis (PCA) in England
-    * [Directory of Services - REST API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-urgent-and-emergency-care-rest) - retrieve information about a wide range of health and care services in England with our Directory of Services - REST API
-    * [Directory of Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-soap) - retrieve information about a wide range of health and care services in England with our Directory of Services - SOAP API
-    * [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services) - use this API to access limited information about dispensing services
+      ## Related APIs
+      The following APIs are related to this one:
+      * [Electronic Prescription Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir)  - access the Electronic Prescription Service (EPS) - currently you can only use this new API to prescribe, not dispense
+      * [Electronic Prescription Service - HL7 V3 API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-hl7-v3) - access the Electronic Prescription Service (EPS) to send prescriptions from prescribers such as GPs to dispensers such as pharmacies using our HL7 V3 API
+      * [Electronic Prescription Tracker - REST API](https://digital.nhs.uk/developer/api-catalogue/spine-electronic-prescription-service-tracker-rest) - use this if you want a read-only interface to obtain information about a patient’s prescriptions
+      * NHS BSA Prescription Services [Open Data Portal](https://opendata.nhsbsa.net/) - download public datasets including Secondary care medicines data (SCMD),  prescriptions issued in England, and Prescription Cost Analysis (PCA) in England
+      * [Directory of Services - REST API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-urgent-and-emergency-care-rest) - retrieve information about a wide range of health and care services in England with our Directory of Services - REST API
+      * [Directory of Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-soap) - retrieve information about a wide range of health and care services in England with our Directory of Services - SOAP API
+      * [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services) - use this API to access limited information about dispensing services
 
-    ## API status and roadmap
-    This API standard is in [beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status), meaning:
-    * it is available for production use
-    * we might make breaking changes, but only if we cannot avoid it, and we will give an advance notice
+      ## API status and roadmap
+      This API standard is in [beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status), meaning:
+      * it is available for production use
+      * we might make breaking changes, but only if we cannot avoid it, and we will give an advance notice
     
-    To suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/?order=popular&filter=all&tag=etp-api#controls).
+      To suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/?order=popular&filter=all&tag=etp-api#controls).
     
-    ## Service level
-    This API is a bronze service, meaning it is operational and supported only during business hours (8am to 6pm), Monday to Friday excluding bank holidays.
+      ## Service level
+      This API is a bronze service, meaning it is operational and supported only during business hours (8am to 6pm), Monday to Friday excluding bank holidays.
 
-    For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).
+      For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).
     
-    ## Technology
-    This API is a REST API. It is accessed through HTTP and returns data in a JSON format.
+      ## Technology
+      This API is a REST API. It is accessed through HTTP and returns data in a JSON format.
 
-    For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
+      For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
     
-    ## Network access    
-    This API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network). 
+      ## Network access    
+      This API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network). 
 
-    For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).
+      For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).
 
-    ## Security and authorisation    
-    Your API call must include a subscription-key header with a valid subscription key.
+      ## Security and authorisation    
+      Your API call must include a subscription-key header with a valid subscription key.
     
-    [Login](https://developer.api.nhs.uk/login) or [register](https://developer.api.nhs.uk/register) to get an API key to use this API.
+      [Login](https://developer.api.nhs.uk/login) or [register](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
-    ## Environments and testing    
-    There are no testing environments. 
+      ## Environments and testing    
+      There are no testing environments. 
     
-    The base URL for all production API calls is `https://api.nhs.uk/etp`.
+      The base URL for all production API calls is `https://api.nhs.uk/etp`.
     
-    ## Onboarding
-    There is no onboarding process or assurance required, other than [registering](https://developer.api.nhs.uk/register) to get an API key to use this API.
+      ## Onboarding
+      There is no onboarding process or assurance required, other than [registering](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
+servers:
+  - url: http://etpwebservice.swagger.io
+    
 paths:
   /SearchByName:
     get:

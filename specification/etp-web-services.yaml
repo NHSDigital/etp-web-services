@@ -78,7 +78,7 @@ info:
       There is no onboarding process or assurance required, other than [registering](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
 servers:
-    url: http://etpwebservice.swagger.io
+  - url: http://etpwebservice.swagger.io
     
 paths:
   /SearchByName:

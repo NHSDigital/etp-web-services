@@ -8,9 +8,7 @@ info:
   contact:
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
-servers:
-    url: http://etpwebservice.swagger.io
-    
+
 #tags: # must be in alphabetical order
 #  - name: Cats
 #  - name: Dogs
@@ -79,6 +77,9 @@ servers:
       ## Onboarding
       There is no onboarding process or assurance required, other than [registering](https://developer.api.nhs.uk/register) to get an API key to use this API.
 
+servers:
+    url: http://etpwebservice.swagger.io
+    
 paths:
   /SearchByName:
     get:

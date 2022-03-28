@@ -41,6 +41,7 @@ info:
       * [Directory of Services - REST API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-urgent-and-emergency-care-rest) - retrieve information about a wide range of health and care services in England with our Directory of Services - REST API
       * [Directory of Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-soap) - retrieve information about a wide range of health and care services in England with our Directory of Services - SOAP API
       * [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services) - use this API to access limited information about dispensing services
+      * [Electronic Transmission of Prescriptions Web Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/electronic-transmission-of-prescriptions-web-services-soap) - use this to get prescription dispenser information for a patient, using NHS UK Web Services
 
       ## API status and roadmap
       This API standard is in [beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status), meaning:
@@ -95,8 +96,8 @@ paths:
         This is not a geographical search and returns any dispensaries within England that meet the name criteria.
         
       operationId: SearchByName
-      tags:
-        - SearchByName
+#     tags:
+#       - SearchByName
       parameters:
         - name: organisationName
           in: query
@@ -145,8 +146,8 @@ paths:
         For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
 
       operationId: /SearchByNameAndLocation
-      tags:
-        - SearchByNameAndLocation
+#     tags:
+#       - SearchByNameAndLocation
       parameters:
         - name: organisationName
           in: query
@@ -205,8 +206,8 @@ paths:
         This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
       
       operationId: SearchByODSCode
-      tags:
-        - SearchByODSCode
+#     tags:
+#       - SearchByODSCode
       parameters:
         - name: odscode
           in: query
@@ -235,8 +236,8 @@ paths:
         This endpoint retrieves the 25 nearest pharmacies or appliance contractors to the supplied postcode and the service type or EPS status chosen.
         
       operationId: SearchByPostcode
-      tags:
-        - SearchByPostcode
+#     tags:
+#       - SearchByPostcode
       parameters:
         - name: fullpostcode
           in: query
@@ -277,8 +278,8 @@ paths:
         Get all internet pharmacies
         
       operationId: SearchInternetPharmacy
-      tags:
-        - SearchInternetPharmacy     
+#     tags:
+#       - SearchInternetPharmacy     
       responses:
         '200':
           description: The following is a digest of the returned data- Dispensing Site ODS Code, Site Name, Site contact details (telephone & fax), Site Address and postcode, URL, EPS Status, Service Type, Services it provides and Opening Times. The results will be ordered alphabetically using the dispensary name.

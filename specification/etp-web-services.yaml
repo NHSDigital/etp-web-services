@@ -115,17 +115,17 @@ paths:
       responses:
         '200':
           description: |
-          The following is a digest of the returned data:
-          * Dispensing site ODS code
-          * Site name
-          * Site contact details (telephone & fax)
-          * Site address and postcode
-          * URL
-          * EPS status
-          * Service type
-          * Services it provides
-          * Opening times
-          Results are ordered alphabetically by the dispensary name.
+            The following is a digest of the returned data:
+            * Dispensing site ODS code
+            * Site name
+            * Site contact details (telephone & fax)
+            * Site address and postcode
+            * URL
+            * EPS status
+            * Service type
+            * Services it provides
+            * Opening times
+            Results are ordered alphabetically by the dispensary name.
           content:
             application/json:   
               schema:
@@ -186,18 +186,18 @@ paths:
       responses:
         '200':
           description: |
-          The following is a digest of the returned data:
-          * Dispensing site ODS code
-          * Site name
-          * Site contact details (telephone & fax)
-          * Site address and postcode
-          * URL
-          * EPS status
-          * Service type
-          * Distance from supplied postcode
-          * Services it provides
-          * Opening times
-          Results are ordered by distance from the supplied postcode with the nearest first.
+            The following is a digest of the returned data:
+            * Dispensing site ODS code
+            * Site name
+            * Site contact details (telephone & fax)
+            * Site address and postcode
+            * URL
+            * EPS status
+            * Service type
+            * Distance from supplied postcode
+            * Services it provides
+            * Opening times
+            Results are ordered by distance from the supplied postcode with the nearest first.
           content:
             application/json:   
               schema:
@@ -230,16 +230,16 @@ paths:
       responses:
         '200':
           description: |
-          The following is a digest of the returned data:
-          * Dispensing site ODS code
-          * Site name
-          * Site contact details (telephone & fax)
-          * Site address and postcode
-          * URL
-          * EPS status
-          * Service type
-          * Services it provides
-          * Opening times
+            The following is a digest of the returned data:
+            * Dispensing site ODS code
+            * Site name
+            * Site contact details (telephone & fax)
+            * Site address and postcode
+            * URL
+            * EPS status
+            * Service type
+            * Services it provides
+            * Opening times
           content:
             application/json:   
               schema:
@@ -282,17 +282,17 @@ paths:
       responses:
         '200':
           description: |
-          The following is a digest of the returned data:
-          * Dispensing site ODS code
-          * Site name
-          * Site contact details (telephone & fax)
-          * Site address and postcode
-          * URL
-          * EPS status
-          * Service type
-          * Services it provides
-          * Opening times
-          Results are ordered by distance from the supplied postcode with the nearest first.
+            The following is a digest of the returned data:
+            * Dispensing site ODS code
+            * Site name
+            * Site contact details (telephone & fax)
+            * Site address and postcode
+            * URL
+            * EPS status
+            * Service type
+            * Services it provides
+            * Opening times
+            Results are ordered by distance from the supplied postcode with the nearest first.
           content:
             application/json:   
               schema:
@@ -311,17 +311,17 @@ paths:
       responses:
         '200':
           description: |
-          The following is a digest of the returned data:
-          * Dispensing site ODS code
-          * Site name
-          * Site contact details (telephone & fax)
-          * Site address and postcode
-          * URL
-          * EPS status
-          * Service type
-          * Services it provides
-          * Opening times. 
-          Results are ordered alphabetically by dispensary name.
+            The following is a digest of the returned data:
+            * Dispensing site ODS code
+            * Site name
+            * Site contact details (telephone & fax)
+            * Site address and postcode
+            * URL
+            * EPS status
+            * Service type
+            * Services it provides
+            * Opening times
+            Results are ordered alphabetically by dispensary name.
           content:
             application/json:   
               schema:

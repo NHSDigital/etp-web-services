@@ -9,12 +9,6 @@ info:
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
 
-#tags: # must be in alphabetical order
-#  - name: Cats
-#  - name: Dogs
-#  - name: Fish
-#  - name: Guinia Pigs
-
   description: |
       ## Overview    
       Use this API to get Electronic Prescription Service (EPS) dispenser (and dispensing appliance contractor) information for a patient via NHS UK Web Services.
@@ -85,7 +79,7 @@ paths:
   /SearchByName:
     get:
       summary: Search dispensers by name
-      description: 
+      description: |
         ## Overview
         This method retrieves the first 25 pharmacies or appliance contractors (in alphabetical order) with a name LIKE the one entered and the service type or EPS status chosen. 
         
@@ -96,8 +90,6 @@ paths:
         This is not a geographical search and returns any dispensaries within England that meet the name criteria.
         
       operationId: SearchByName
-#     tags:
-#       - SearchByName
       parameters:
         - name: organisationName
           in: query
@@ -122,7 +114,18 @@ paths:
       
       responses:
         '200':
-          description: The following is a digest of the returned data - Dispensing Site ODS Code, Site Name, Site contact details (telephone & fax), Site Address and postcode, URL, EPS Status, Service Type, Services it provides and Opening Times. The results will be ordered alphabetically using the dispensary name.
+          description: |
+          The following is a digest of the returned data:
+          * Dispensing site ODS code
+          * Site name
+          * Site contact details (telephone & fax)
+          * Site address and postcode
+          * URL
+          * EPS status
+          * Service type
+          * Services it provides
+          * Opening times
+          Results are ordered alphabetically by the dispensary name.
           content:
             application/json:   
               schema:
@@ -132,8 +135,8 @@ paths:
 
   /SearchByNameAndLocation:
     get:
-      summary: Search dispenser by Name and Location
-      description: 
+      summary: Search dispensers by name and location
+      description: |
         ## Overview
         This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name LIKE the one entered, and the service type or EPS status chosen. 
          
@@ -146,8 +149,6 @@ paths:
         For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
 
       operationId: /SearchByNameAndLocation
-#     tags:
-#       - SearchByNameAndLocation
       parameters:
         - name: organisationName
           in: query
@@ -158,14 +159,14 @@ paths:
             type: string
         - name: partPostcode
           in: query
-          description: First Part of a valid postcode to search on
+          description: First part of a valid postcode to search on
           required: false
           example: LS2
           schema:
             type: string
         - name: location
           in: query
-          description: Street name or Town name to search
+          description: Street name or town name to search
           example: Leeds
           schema:
             type: string    
@@ -184,7 +185,19 @@ paths:
             type: string
       responses:
         '200':
-          description: The following is a digest of the returned data- Dispensing Site ODS Code, Site Name, Site contact details (telephone & fax), Site Address and postcode, URL, EPS Status, Service Type, Distance from supplied postcode, Services it provides and Opening Times. The results will be ordered by distance from the supplied postcode with the nearest appearing first in the list.
+          description: |
+          The following is a digest of the returned data:
+          * Dispensing site ODS code
+          * Site name
+          * Site contact details (telephone & fax)
+          * Site address and postcode
+          * URL
+          * EPS status
+          * Service type
+          * Distance from supplied postcode
+          * Services it provides
+          * Opening times
+          Results are ordered by distance from the supplied postcode with the nearest first.
           content:
             application/json:   
               schema:
@@ -194,10 +207,10 @@ paths:
 
   /SearchByODSCode:
     get:
-      summary: /SearchByOdsCode
-      description: 
+      summary: Search dispensers by ODS code
+      description: |
         ## Overview
-        Occasionally you might know the ODS code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
+        Occasionally you might know the Organisation Data Service (ODS) code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
          
         It returns pertinent information about the dispenser to allow the end user to validate that the ODS code is the dispenser they intended. 
          
@@ -206,19 +219,27 @@ paths:
         This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
       
       operationId: SearchByODSCode
-#     tags:
-#       - SearchByODSCode
       parameters:
         - name: odscode
           in: query
-          description: Valid ODS Code such as FLH84,FHH81 or FW866
+          description: Valid ODS code such as FLH84, FHH81 or FW866
           required: true
           example: FLH84
           schema:
             type: string     
       responses:
         '200':
-          description: The following is a digest of the returned data. Dispensing Site ODS Code, Site Name, Site contact details (telephone & fax), Site Address and postcode, URL, EPS Status, Service Type, Services it provides and Opening Times.
+          description: |
+          The following is a digest of the returned data:
+          * Dispensing site ODS code
+          * Site name
+          * Site contact details (telephone & fax)
+          * Site address and postcode
+          * URL
+          * EPS status
+          * Service type
+          * Services it provides
+          * Opening times
           content:
             application/json:   
               schema:
@@ -231,13 +252,11 @@ paths:
   /SearchByPostcode:
     get:
       summary: Search dispensers by postcode
-      description: 
+      description: |
         ## Overview
         This endpoint retrieves the 25 nearest pharmacies or appliance contractors to the supplied postcode and the service type or EPS status chosen.
         
       operationId: SearchByPostcode
-#     tags:
-#       - SearchByPostcode
       parameters:
         - name: fullpostcode
           in: query
@@ -262,7 +281,18 @@ paths:
       
       responses:
         '200':
-          description: The following is a digest of the returned data. Dispensing Site ODS Code, Site Name, Site contact details (telephone & fax), Site Address and postcode, URL, EPS Status, Service Type, Services it provides and Opening Times. The results will be ordered by distance from the supplied postcode with the nearest appearing first in the list.
+          description: |
+          The following is a digest of the returned data:
+          * Dispensing site ODS code
+          * Site name
+          * Site contact details (telephone & fax)
+          * Site address and postcode
+          * URL
+          * EPS status
+          * Service type
+          * Services it provides
+          * Opening times
+          Results are ordered by distance from the supplied postcode with the nearest first.
           content:
             application/json:   
               schema:
@@ -273,16 +303,25 @@ paths:
   /SearchInternetPharmacy:
     get:
       summary: Search all internet pharmacies
-      description: 
+      description: |
         ## Overview
         Get all internet pharmacies
         
       operationId: SearchInternetPharmacy
-#     tags:
-#       - SearchInternetPharmacy     
       responses:
         '200':
-          description: The following is a digest of the returned data- Dispensing Site ODS Code, Site Name, Site contact details (telephone & fax), Site Address and postcode, URL, EPS Status, Service Type, Services it provides and Opening Times. The results will be ordered alphabetically using the dispensary name.
+          description: |
+          The following is a digest of the returned data:
+          * Dispensing site ODS code
+          * Site name
+          * Site contact details (telephone & fax)
+          * Site address and postcode
+          * URL
+          * EPS status
+          * Service type
+          * Services it provides
+          * Opening times. 
+          Results are ordered alphabetically by dispensary name.
           content:
             application/json:   
               schema:

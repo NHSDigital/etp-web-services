@@ -21,8 +21,6 @@ info:
     
       Use this API if you are building GP software - it provides additional information about dispensing appliance contractors that is not available through [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
 
-      As one of the Directory of Services APIs, this also provides data to the [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
-    
       ## Who can use this API
       This API can only be used to support the delivery of health and social care.
     
@@ -127,7 +125,7 @@ paths:
             * Opening times
             
             Results are ordered alphabetically by dispensary name.
-            
+          
           content:
             application/json:   
               schema:
@@ -341,16 +339,21 @@ components:
       properties:
         weekDay:
           type: string
+          description: Day of week
         times:
           type: string
+          description: Times
         offsetOpeningTime:
           type: string
+          description: Opening time
         offsetClosingTime:
           type: string
+          description: Closing time
         openingTimeType:
           type: string
         additionalOpeningDate:
           type: string
+          description: Additional opening date
         isOpen:
           type: boolean
 
@@ -368,32 +371,45 @@ components:
       type: object
       properties:
         organisationCode:
-          type: string     
+          type: string  
+          description: Valid ODS Code (examples: FLH84, FHH81, FW866)
         name:
           type: string
+          description: The name of the pharmacy to search on (example: Boots)
         phone:
-          type: string   
+          type: string
+          description: Phone number of dispenser
         fax:
           type: string
+          description: FAX number of dispanser
         street:
           type: string
+          description: Street name of dispenser
         locality:
           type: string
+          description: Locality of dispenser
         town:
           type: string
+          description: Town name of dispenser
         administrative:
           type: string
+          description: Adminitsrtaive area of dispenser
         postcode: 
           type: string
+          description: Postcode of dispenser
         url:
           type: string
+          description: URL of dispenser
         eps: 
           type: boolean
+          description: Is dispenser EPS-enabled or not
         serviceType: 
           type: string
+          description: The service type to search for (Community Pharmacy, including Internet (1) or Appliance (2)
         distance:
           type: number
           format: double
+          description: Distance of dispenser from supplied postcode
         services:
           type: array      
           items:              

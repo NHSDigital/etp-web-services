@@ -393,7 +393,7 @@ components:
           description: Town name of dispenser
         administrative:
           type: string
-          description: Adminitsrtaive area of dispenser
+          description: Administrative area of dispenser
         postcode: 
           type: string
           description: Postcode of dispenser

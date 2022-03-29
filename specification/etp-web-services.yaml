@@ -16,7 +16,7 @@ info:
       You can search for dispenser information using:
       * a valid ODS code (previously known as NACS code)
       * their name and service type (community pharmacy or appliance contractor), and whether they are EPS-enabled or not
-      * their name and location and the service type, and whether they are EPS-enabled or not
+      * their name, location and the service type, and whether they are EPS-enabled or not
       * their postcode and service type, and whether they are EPS-enabled or not
     
       Use this API if you are building GP software - it provides additional information about dispensing appliance contractors that is not available through [Electronic Prescription Service Directory of Services API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-directory-of-services).
@@ -81,7 +81,7 @@ paths:
       summary: Search dispensers by name
       description: |
         ## Overview
-        This method retrieves the first 25 pharmacies or appliance contractors (in alphabetical order) with a name LIKE the one entered and the service type or EPS status chosen. 
+        This method retrieves the first 25 pharmacies or appliance contractors (in alphabetical order) with a name like the one entered and the service type or EPS status chosen. 
         
         It is a non-geographical search, that is, for name only for virtual pharmacies or appliance contractors. 
         
@@ -107,7 +107,7 @@ paths:
             type: string
         - name: eps
           in: query
-          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
+          description: Retrieve EPS-enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -125,7 +125,9 @@ paths:
             * Service type
             * Services it provides
             * Opening times
-            Results are ordered alphabetically by the dispensary name.
+            
+            Results are ordered alphabetically by dispensary name.
+            
           content:
             application/json:   
               schema:
@@ -138,15 +140,13 @@ paths:
       summary: Search dispensers by name and location
       description: |
         ## Overview
-        This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name LIKE the one entered, and the service type or EPS status chosen. 
+        This method retrieves pharmacies or appliance contractors with the address or post code specified that have a name like the one entered, and the service type or EPS status chosen. 
          
-        This search matches on either part postcode or town (if you supply both, the postcode is used). 
-         
-        Note that this search matches against the town name or part postcode. 
+        This search matches on either part postcode or town name. If you supply both, the postcode is used. 
          
         For example, if you supply a part postcode of LS1, the search only returns dispensaries within LS1. No dispensaries in surrounding postcodes are returned even if there are less than 25 in the supplied part postcode results. 
          
-        For a match against the name the first part of the stored name is used, for example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
+        For a match against the name, the first part of the stored name is used. For example, a search for 'Coens' should return 'Coens Plc' but not 'The Coens Chemist'.
 
       operationId: /SearchByNameAndLocation
       parameters:
@@ -179,7 +179,7 @@ paths:
             type: string
         - name: eps
           in: query
-          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
+          description: Retrieve EPS-enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -197,7 +197,9 @@ paths:
             * Distance from supplied postcode
             * Services it provides
             * Opening times
+            
             Results are ordered by distance from the supplied postcode with the nearest first.
+            
           content:
             application/json:   
               schema:
@@ -210,11 +212,11 @@ paths:
       summary: Search dispensers by ODS code
       description: |
         ## Overview
-        Occasionally you might know the Organisation Data Service (ODS) code of a local pharmacy, and not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
+        If you know the Organisation Data Service (ODS) code of a local pharmacy, you might not wish to search for a dispenser by name or location. Use this endpoint to validate that the ODS code is a valid dispenser. 
          
         It returns pertinent information about the dispenser to allow the end user to validate that the ODS code is the dispenser they intended. 
          
-        The information returned includes whether the dispenser is EPS enabled. 
+        The information returned includes whether the dispenser is EPS-enabled. 
          
         This endpoint only returns organisations registered as dispensers. If you supply a valid ODS code but it is not registered as a dispenser, then it returns no data.
       
@@ -240,6 +242,7 @@ paths:
             * Service type
             * Services it provides
             * Opening times
+            
           content:
             application/json:   
               schema:
@@ -274,7 +277,7 @@ paths:
             type: string
         - name: eps
           in: query
-          description: Retrieve EPS enabled or disabled dispensers (YES/ NO) – The default value is YES.
+          description: Retrieve EPS-enabled or disabled dispensers (YES/ NO) – The default value is YES.
           required: false
           schema:
             type: string
@@ -292,7 +295,9 @@ paths:
             * Service type
             * Services it provides
             * Opening times
+            
             Results are ordered by distance from the supplied postcode with the nearest first.
+            
           content:
             application/json:   
               schema:
@@ -305,7 +310,7 @@ paths:
       summary: Search all internet pharmacies
       description: |
         ## Overview
-        Get all internet pharmacies
+        Get all internet pharmacies.
         
       operationId: SearchInternetPharmacy
       responses:
@@ -321,7 +326,9 @@ paths:
             * Service type
             * Services it provides
             * Opening times
+            
             Results are ordered alphabetically by dispensary name.
+            
           content:
             application/json:   
               schema:

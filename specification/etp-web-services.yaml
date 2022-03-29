@@ -372,10 +372,10 @@ components:
       properties:
         organisationCode:
           type: string  
-          description: Valid ODS Code (examples: FLH84, FHH81, FW866)
+          description: Valid ODS Code
         name:
           type: string
-          description: The name of the pharmacy to search on (example: Boots)
+          description: The name of the pharmacy to search on
         phone:
           type: string
           description: Phone number of dispenser
@@ -405,7 +405,7 @@ components:
           description: Is dispenser EPS-enabled or not
         serviceType: 
           type: string
-          description: The service type to search for (Community Pharmacy, including Internet (1) or Appliance (2)
+          description: The service type to search for - Community Pharmacy, including Internet (1) or Appliance (2)
         distance:
           type: number
           format: double

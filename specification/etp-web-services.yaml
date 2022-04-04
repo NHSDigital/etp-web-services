@@ -130,6 +130,8 @@ paths:
             application/json:   
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
+              example:
+                $ref: "components/examples/SearchByNameExample.json"  
         '400':
           description: If any of required parameters are not provided
 
@@ -199,9 +201,11 @@ paths:
             Results are ordered by distance from the supplied postcode with the nearest first.
             
           content:
-            application/json:   
+            application/json:
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
+              example:
+                $ref: "components/examples/SearchByNameAndLocationExample.json" 
         '400':
           description: If any of required parameters are not provided
 
@@ -245,6 +249,8 @@ paths:
             application/json:   
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
+              example:
+                $ref: "components/examples/SearchByODSCodeExample.json" 
         '204':
           description: OdsCode not found        
         '400':
@@ -300,6 +306,8 @@ paths:
             application/json:   
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
+              example:
+                $ref: "components/examples/SearchByPostcodeExample.json" 
         '400':
           description: If any of required parameters are not provided
 

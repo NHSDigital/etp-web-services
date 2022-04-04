@@ -1,0 +1,142 @@
+{
+  "organisationCode": "FG044",
+  "name": "Boots",
+  "phone": "01484519734",
+  "fax": "01484518616",
+  "street": "Great Northern Retail Pk",
+  "locality": "Leeds Rd",
+  "town": null,
+  "administrative": "West Yorkshire",
+  "postcode": "HD1 6ND",
+  "url": null,
+  "eps": true,
+  "serviceType": "Community",
+  "distance": 0.0,
+  "services": [
+    {
+      "serviceName": "Pharmacy Service (NHS): Medication review service",
+      "serviceCode": "SRV0261",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service (NHS): Supervised consumption of medicines",
+      "serviceCode": "SRV0258",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service (Non-NHS): Emergency contraception",
+      "serviceCode": "SRV0530",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service (Non-NHS): Seasonal flu vaccination service (not at risk groups)",
+      "serviceCode": "SRV0514",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Community Pharmacy",
+      "serviceCode": "EPS0002",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Electronic Prescription Service",
+      "serviceCode": "EPS0001",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: New medicine service",
+      "serviceCode": "SRV0257",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Prescription collection from local General Practices",
+      "serviceCode": "SRV0519",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Prescription delivery service",
+      "serviceCode": "SRV0522",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Private consultation room",
+      "serviceCode": "SRV0526",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Public Health",
+      "serviceCode": "SRV0527",
+      "serviceProvider": "{}"
+    },
+    {
+      "serviceName": "Pharmacy Service: Seasonal flu vaccination service (at risk groups)",
+      "serviceCode": "SRV0277",
+      "serviceProvider": "{}"
+    }
+  ],
+  "openingTimes": [
+    {
+      "weekDay": "Friday",
+      "times": "08:00-23:59",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1439",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    },
+    {
+      "weekDay": "Monday",
+      "times": "08:00-23:59",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1439",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    },
+    {
+      "weekDay": "Saturday",
+      "times": "08:00-22:00",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1320",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    },
+    {
+      "weekDay": "Sunday",
+      "times": "10:30-16:30",
+      "offsetOpeningTime": "630",
+      "offsetClosingTime": "990",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    },
+    {
+      "weekDay": "Thursday",
+      "times": "08:00-23:59",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1439",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    },
+    {
+      "weekDay": "Tuesday",
+      "times": "08:00-23:59",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1439",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    },
+    {
+      "weekDay": "Wednesday",
+      "times": "08:00-23:59",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1439",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    }
+  ]
+}

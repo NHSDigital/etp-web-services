@@ -1,0 +1,32 @@
+{
+  "organisationCode": "FG044",
+  "name": "Boots",
+  "phone": "01484519734",
+  "fax": "01484518616",
+  "street": "Great Northern Retail Pk",
+  "locality": "Leeds Rd",
+  "town": null,
+  "administrative": "West Yorkshire",
+  "postcode": "HD1 6ND",
+  "eps": true,
+  "serviceType": "Community",
+  "distance": 0,
+  "services": [
+    {
+      "serviceName": "Pharmacy Service: New medicine service",
+      "serviceCode": "SRV0257",
+      "serviceProvider": "{}"
+    }
+  ],
+  "openingTimes": [
+    {
+      "weekDay": "Saturday",
+      "times": "08:00-22:00",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "1320",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "",
+      "isOpen": true
+    }
+  ]
+}

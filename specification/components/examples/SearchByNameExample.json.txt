@@ -1,0 +1,32 @@
+{
+  "organisationCode": "FA818",
+  "name": "Boots",
+  "phone": "01142568011",
+  "fax": "01142568028",
+  "street": "44A High Street",
+  "locality": "Meadowhall Centre",
+  "town": null,
+  "administrative": "South Yorkshire",
+  "postcode": "S9 1EN",
+  "eps": true,
+  "serviceType": "Community",
+  "distance": 0.0,
+  "services": [
+    {
+      "serviceName": "Pharmacy Service: Prescription collection from local General Practices",
+      "serviceCode": "SRV0519",
+      "serviceProvider": "{}"
+    }
+  ],
+  "openingTimes": [
+    {
+      "weekDay": "",
+      "times": "08:00-16:30",
+      "offsetOpeningTime": "480",
+      "offsetClosingTime": "990",
+      "openingTimeType": "General",
+      "additionalOpeningDate": "Dec 24 2021",
+      "isOpen": true
+    }
+  ]
+}

@@ -401,7 +401,7 @@ components:
         fax:
           type: string
           description: FAX number of dispanser
-          example: example: 01234567890
+          example: 01234567890
         street:
           type: string
           description: Street name of dispenser

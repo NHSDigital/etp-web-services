@@ -376,7 +376,7 @@ components:
       properties:
         serviceName:
           type: string
-          example: Pharmacy Service: Prescription collection from local General Practices
+          example: "Pharmacy Service: Prescription collection from local General Practices"
         serviceCode:
           type: string
           example: SRV0519

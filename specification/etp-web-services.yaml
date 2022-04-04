@@ -131,7 +131,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
               example:
-                $ref: "components/examples/SearchByNameExample.json"  
+                $ref: "components/examples/SearchByNameExample.json.txt"  
         '400':
           description: If any of required parameters are not provided
 
@@ -205,7 +205,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
               example:
-                $ref: "components/examples/SearchByNameAndLocationExample.json" 
+                $ref: "components/examples/SearchByNameAndLocationExample.json.txt" 
         '400':
           description: If any of required parameters are not provided
 
@@ -250,7 +250,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
               example:
-                $ref: "components/examples/SearchByODSCodeExample.json" 
+                $ref: "components/examples/SearchByODSCodeExample.json.txt" 
         '204':
           description: OdsCode not found        
         '400':
@@ -307,7 +307,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/pharmacyModel"
               example:
-                $ref: "components/examples/SearchByPostcodeExample.json" 
+                $ref: "components/examples/SearchByPostcodeExample.json.txt" 
         '400':
           description: If any of required parameters are not provided
 

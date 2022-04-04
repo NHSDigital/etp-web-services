@@ -348,20 +348,26 @@ components:
         weekDay:
           type: string
           description: Day of week
+          example: Sunday
         times:
           type: string
           description: Times
+          example: 08:00-16:30
         offsetOpeningTime:
           type: string
-          description: Opening time
+          description: Opening time offset
+          example: 480
         offsetClosingTime:
           type: string
-          description: Closing time
+          description: Closing time offset
+          example: 990
         openingTimeType:
           type: string
+          example: General
         additionalOpeningDate:
           type: string
           description: Additional opening date
+          example: Dec 24 2022
         isOpen:
           type: boolean
 
@@ -370,8 +376,10 @@ components:
       properties:
         serviceName:
           type: string
+          example: Pharmacy Service: Prescription collection from local General Practices
         serviceCode:
           type: string
+          example: SRV0519
         serviceProvider:
           type: string    
 
@@ -381,30 +389,39 @@ components:
         organisationCode:
           type: string  
           description: Valid ODS Code
+          example: FA818
         name:
           type: string
           description: The name of the pharmacy to search on
+          example: Boots
         phone:
           type: string
           description: Phone number of dispenser
+          example: 01234567890
         fax:
           type: string
           description: FAX number of dispanser
+          example: example: 01234567890
         street:
           type: string
           description: Street name of dispenser
+          example: 44 High Street
         locality:
           type: string
           description: Locality of dispenser
+          example: Meadowhall Centre
         town:
           type: string
           description: Town name of dispenser
+          example: Sheffield
         administrative:
           type: string
           description: Administrative area of dispenser
+          example: South Yorkshire
         postcode: 
           type: string
           description: Postcode of dispenser
+          example: S9 1EN
         url:
           type: string
           description: URL of dispenser
@@ -414,10 +431,12 @@ components:
         serviceType: 
           type: string
           description: The service type to search for - Community Pharmacy, including Internet (1) or Appliance (2)
+          example: Community 
         distance:
           type: number
           format: double
           description: Distance of dispenser from supplied postcode
+          example: 0.0
         services:
           type: array      
           items:              

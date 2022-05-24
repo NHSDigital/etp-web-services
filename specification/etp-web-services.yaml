@@ -50,9 +50,9 @@ info:
       * [Electronic Transmission of Prescriptions Web Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/electronic-transmission-of-prescriptions-web-services-soap) - use this to get prescription dispenser information for a patient, using NHS UK Web Services
 
       ## API status and roadmap
-      This API standard is in [beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status), meaning:
+      This API standard is in [beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status) and under review, meaning:
       * it is available for production use
-      * we might make breaking changes, but only if we cannot avoid it, and we will give an advance notice
+      * it is under review and we're considering deprecating it
     
       To suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/?order=popular&filter=all&tag=etp-api#controls).
     

@@ -20,7 +20,7 @@ info:
                 </figure>
             </div>
             <div class="nhsd-m-emphasis-box__content-box">
-                <div data-uipath="website.contentblock.emphasis.content" class="nhsd-t-word-break"><p class="nhsd-t-body">This API is under review and we're considering deprecating it. If you have any concerns, <a href="https://digital.nhs.uk/developer/help-and-support">contact us</a>.</p></div>            
+                <div data-uipath="website.contentblock.emphasis.content" class="nhsd-t-word-break"><p class="nhsd-t-body">This API is <a href="https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status">retired</a> and not available for use. We suggest you use the <a href="https://digital.nhs.uk/developer/api-catalogue/service-search">Service Search API</a> instead.</p></div>            
             </div>
         </div>
       </div>
@@ -51,11 +51,9 @@ info:
       * [Electronic Transmission of Prescriptions Web Services - SOAP API](https://digital.nhs.uk/developer/api-catalogue/electronic-transmission-of-prescriptions-web-services-soap) - use this to get prescription dispenser information for a patient, using NHS UK Web Services
 
       ## API status and roadmap
-      This API standard is in [beta but under review](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status), meaning:
-      * it is available for production use
-      * we're considering [deprecating](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status) it
+      This API is [retired](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status) and no longer available for use.
     
-      To suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/?order=popular&filter=all&tag=etp-api#controls).
+      We suggest you use the [Service Search API](https://digital.nhs.uk/developer/api-catalogue/service-search) instead.
     
       ## Service level
       This API is a bronze service, meaning it is operational and supported only during business hours (8am to 6pm), Monday to Friday excluding bank holidays.

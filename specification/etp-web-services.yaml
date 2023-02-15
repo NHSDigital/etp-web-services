@@ -42,7 +42,7 @@ info:
       ## Related APIs
       The following APIs are related to this one:
       * [Electronic Prescription Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir)  - access the Electronic Prescription Service (EPS) - currently you can only use this new API to prescribe, not dispense
-      * [Electronic Prescription Service - HL7 V3 API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-hl7-v3) - access the Electronic Prescription Service (EPS) to send prescriptions from prescribers such as GPs to dispensers such as pharmacies using our HL7 V3 API
+      * [Electronic Prescription Service - HL7 V3 API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-hl7-v3) - this API is [deprecated](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses)
       * [Electronic Prescription Tracker - REST API](https://digital.nhs.uk/developer/api-catalogue/spine-electronic-prescription-service-tracker-rest) - use this if you want a read-only interface to obtain information about a patient’s prescriptions
       * NHS BSA Prescription Services [Open Data Portal](https://opendata.nhsbsa.net/) - download public datasets including Secondary care medicines data (SCMD),  prescriptions issued in England, and Prescription Cost Analysis (PCA) in England
       * [Directory of Services - REST API](https://digital.nhs.uk/developer/api-catalogue/directory-of-services-urgent-and-emergency-care-rest) - retrieve information about a wide range of health and care services in England with our Directory of Services - REST API
